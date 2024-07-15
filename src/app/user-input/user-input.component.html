@@ -1,0 +1,33 @@
+
+<form (ngSubmit)="onSubmit()" class="user-input-form">
+  <mat-grid-list cols="2" rowHeight="4:1" gutterSize="16px">
+    <mat-grid-tile>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>User Name</mat-label>
+        <input matInput [(ngModel)]="userName" name="userName" required />
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Workout Type</mat-label>
+        <mat-select [(ngModel)]="workoutType" name="workoutType" required>
+          <mat-option *ngFor="let type of workoutTypes" [value]="type">
+            {{ type }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="2">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Workout Minutes</mat-label>
+        <input matInput type="number" [(ngModel)]="workoutMinutes" name="workoutMinutes" required />
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="2" class="button-tile">
+      <button mat-raised-button color="primary" type="submit" class="full-width">Add Workout</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>

@@ -1,0 +1,10 @@
+
+<mat-form-field appearance="fill">
+    <mat-label>Filter by Workout Type</mat-label>
+    <mat-select (selectionChange)="onFilter($event.value)">
+      <mat-option *ngFor="let type of workoutTypes" [value]="type">
+        {{ type }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
